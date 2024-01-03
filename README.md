@@ -127,7 +127,7 @@ Another crucial factor is the number of classes, it significantly impacts a neur
 Test Loss: 0.2528925836086273  
 Test Accuracy: 0.9122670888900757
 
-Applying the same network without VGG16 as used in the previous dataset, we can observe that when applied to this dataset, it achieves higher accuracy and lower loss, resulting in a more robust outcome.  
+Applying the same network without VGG16 as used in the previous dataset, we can observe it achieves higher accuracy and lower loss, resulting in a more robust outcome.  
 
 ## ✍️ Authors
 
