@@ -131,6 +131,6 @@ Applying the same network without VGG16 as used in the previous dataset, we can 
 
 ## ✍️ Authors
 
-Marcos Miguel Sánchez Antonio
+Marcos Miguel Sánchez Antonio  
 Javier Gómez Falcón
 
