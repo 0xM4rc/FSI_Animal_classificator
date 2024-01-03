@@ -129,3 +129,8 @@ Test Accuracy: 0.9122670888900757
 
 Applying the same network without VGG16 as used in the previous dataset, we can observe that when applied to this dataset, it achieves higher accuracy and lower loss, resulting in a more robust outcome.  
 
+## Authors
+
+Marcos Miguel Sánchez Antonio
+Javier Gómez Falcón
+
