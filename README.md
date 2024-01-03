@@ -28,7 +28,7 @@ VGG16 is a specific neural network architecture with 16 layers, known for its ef
 ![VGG16aArchitecture](assets/imgVGG16arch.jpg)  
 Source: https://www.geeksforgeeks.org/vgg-16-cnn-model/
 
-The VGG16 architecture is a neural network comprising 16 layers, primarily stacked with convolutional layers and followed by pooling layers. Its design focuses on using smaller 3x3 convolutional filters throughout, resulting in a deeper network capable of learning complex image features. This structure gained prominence for its simplicity and effectiveness in accurately classifying objects within images, especially in the ImageNet challenge of 2014.
+The VGG16 architecture comprises 16 layers predominantly composed of convolutional layers, succeeded by pooling layers in its neural network structure. Its design focuses on using smaller 3x3 convolutional filters throughout, resulting in a deeper network capable of learning complex image features. This structure gained prominence for its simplicity and effectiveness in accurately classifying objects within images, especially in the ImageNet challenge of 2014.
 
 ## 🐈 Animal Classifier
 
@@ -89,7 +89,7 @@ Number Of Layers|Number Of Neurons Per Layer|Activation Function|DropOut|Learnin
 
 ![Animal Training Comparation](assets/imgAnimalsVgg16.png)
 
-In the training of the network without VGG16, we can observe that it starts at around 0.45% and finishes at approximately 70%. On the other hand, its final loss is about 0.79. When compared to VGG16, it is evident that the latter outperforms it both in accuracy (reaching approximately 85%) and in loss (approximately 0.4)
+In the training of the network without VGG16, we can observe that it starts at around 0.40% and finishes at approximately 70%. On the other hand, its final loss is about 0.79. When compared to VGG16, it is evident that the latter outperforms it both in accuracy (reaching approximately 85%) and in loss (approximately 0.4). Another thing to consider is that in the training of the CNN without VGG16, we can see that it possibly experiences more overfitting, as the lines diverge as they progress.
 
 
 ### Test comapartive
@@ -107,3 +107,22 @@ Test Loss: 0.3619837760925293
 Test Accuracy: 0.8686440587043762
 
 Comparing these test results, we observe a substantial difference in performance between the models. The test with VGG16 achieved significantly lower loss and higher accuracy compared to the test without VGG16. The model utilizing VGG16 architecture demonstrated superior performance, showcasing lower loss and higher accuracy on the test dataset.
+
+## Contrast with another training
+
+In this section, another training will be performed using a different dataset to draw a general comparison between the training process of the previous dataset and the new one, exploring potential causes for these changes.
+
+The selected [dataset](https://www.kaggle.com/datasets/prashant268/chest-xray-covid19-pneumonia) contains images of X-rays, categorized into three groups: COVID-19, pneumonia, and normal. These categories contains 460, 1266, and 3418 images respectively.
+
+Example of an image from the dataset:
+
+![Normal](assets/imgXraysNormal.jpg)
+
+X-ray data might be easier to analyze in a neural network due to more distinctive features, structural uniformity, clarity in medical categories, and lower visual variability compared to animal datasets.
+Another crucial factor is the number of classes, it significantly impacts a neural network. More classes heighten the complexity of classification, demanding enhanced differentiation among diverse categories. Networks with more classes necessitate superior adaptability and generalizability for unknown examples. Higher class counts often pose challenges in achieving high accuracy due to increased complexity and potential overlap between categories. Additionally, networks with more classes may require adjustments to handle increased output space dimensionality effectively.
+
+![Normal](assets/imgXrayV1.png)
+
+81/81 [==============================] - 15s 181ms/step - loss: 0.2529 - accuracy: 0.9123
+Test Loss: 0.2528925836086273
+Test Accuracy: 0.9122670888900757
