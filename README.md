@@ -123,6 +123,9 @@ Another crucial factor is the number of classes, it significantly impacts a neur
 
 ![Normal](assets/imgXrayV1.png)
 
-81/81 [==============================] - 15s 181ms/step - loss: 0.2529 - accuracy: 0.9123
-Test Loss: 0.2528925836086273
+81/81 [==============================] - 15s 181ms/step - loss: 0.2529 - accuracy: 0.9123  
+Test Loss: 0.2528925836086273  
 Test Accuracy: 0.9122670888900757
+
+Applying the same network without VGG16 as used in the previous dataset, we can observe that when applied to this dataset, it achieves higher accuracy and lower loss, resulting in a more robust outcome.  
+
