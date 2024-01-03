@@ -42,6 +42,14 @@ The dataset used in this project was sourced from Kaggle, available via the prov
 
 The diversity in dataset qualities has the potential to impact various aspects, including the model's complexity, generalization capability, preprocessing requirements, and training duration.
 
+#### Image complexity
+
+The dataset holds complexity, as we may encounter cases that can be confusing and contradictory. Here are 2 examples of images from the training set:
+In the first one, we observe an image belonging to the cat class, which also features a butterfly. This situation may lead to class overlap. In the second image, it's labeled as an elephant; however, there isn't one present in the image.
+
+![Alt text](assets/1824.jpeg)
+![Alt text](assets/OIP-eOuoCsdfcco8OgTLQgyFtwHaE7.jpeg)
+
 ### 🎯 Training
 
 ### Efficiency Table Without Pretrained models
@@ -52,9 +60,12 @@ Learning rate = 1e-3
 
 Number Of Layers|Number Of Neurons Per Layer|Activation Function|DropOut|Accuracy|Loss|
 |:---|:---|:---|:---|:---|:---|
+| 4 | 16, 32, 64, 6 | relu, softmax | 0.4, 0.3, 0.5 | 0.5123 | 1.2321 |
+| 2 | 32, 6 | relu, softmax | 0.5 | 0.4314 | 1.3908 |
+| 5 | 32, 64, 64, 32, 6 | relu, softmax | 0.3, 0.4, 0.3, 0.4 | 0.6132 | 1.1009 |
 |3| 32, 128 6 | relu, softmax | 0.25, 0.5 | 0.6029 | 1.1043 |
 |4| 32, 64, 128, 6 | relu, softmax | 0.25, 0.25, 0.5 | 0.7139 | 0.7603 |
-|4| 32, 32, 64, 6 | relu, softmax | 0.2, 0.2, 0.5 | 0.7078 | 0.8015 |
+|4| 32, 32, 64, 6 | relu, softmax | 0.2, 0.2, 0.5 | 0.7100 | 0.8033 |
 
 
 ### Efficiency Table Using VGG16
@@ -70,6 +81,29 @@ Number Of Layers|Number Of Neurons Per Layer|Activation Function|DropOut|Learnin
 
 ### Comparation
 
-![Animal Training Comparation](assets/imgAnimalComparation.png)
+#### CNN without VGG16
+
+![Animal Training Comparation](assets/imgAnimalsCnn.png)
+
+#### Using VGG16
+
+![Animal Training Comparation](assets/imgAnimalsVgg16.png)
 
 In the training of the network without VGG16, we can observe that it starts at around 0.45% and finishes at approximately 70%. On the other hand, its final loss is about 0.79. When compared to VGG16, it is evident that the latter outperforms it both in accuracy (reaching approximately 85%) and in loss (approximately 0.4)
+
+
+### Test comapartive
+
+#### Test without VGG16
+
+45/45 [==============================] - 5s 115ms/step - loss: 0.9265 - accuracy: 0.6638  
+Test Loss: 0.926513135433197  
+Test Accuracy: 0.6638417840003967
+
+#### Test VGG16
+
+45/45 [==============================] - 8s 172ms/step - loss: 0.3620 - accuracy: 0.8686  
+Test Loss: 0.3619837760925293  
+Test Accuracy: 0.8686440587043762
+
+Comparing these test results, we observe a substantial difference in performance between the models. The test with VGG16 achieved significantly lower loss and higher accuracy compared to the test without VGG16. The model utilizing VGG16 architecture demonstrated superior performance, showcasing lower loss and higher accuracy on the test dataset.
